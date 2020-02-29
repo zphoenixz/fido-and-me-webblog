@@ -19,7 +19,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.use('/', adminRoutes);
+app.use('/', rootRoutes);
+app.use('/home', rootRoutes);
 
 
 app.use(errorController.get404);

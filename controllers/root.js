@@ -3,8 +3,8 @@
 
 exports.getHome = (req, res, next) => {
 
-    res.render('shop/index', {
-        prods: products,
+    res.render('index', {
+        // prods: products,
         pageTitle: 'Shop',
         path: '/'
     });
