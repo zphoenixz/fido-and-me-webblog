@@ -4,7 +4,7 @@
 }
 
 body {
-    font-family: Verdana, Helvetica, sans-serif;
+    font-family: Dosis, Helvetica, sans-serif;
     background: #333;
     color: #fff;
     height: 100vh;
@@ -19,20 +19,24 @@ body {
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
-}
-
-.lead {
-    font-size: 1.5rem;
+    position: relative;
 }
 
 .navbar {
     position: fixed;
-    top: 0;
     z-index: 1;
-    display: flex;
-    width: 100%;
-    height: 60px;
-    background: rgba(0, 0, 0, 0.7);
+    top: 5.5%;
+    left: 60%;
+
+    width: 40%;
+    height: 7.5%;
+}
+
+
+
+.navbar a img {
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .navbar ul {
@@ -40,21 +44,29 @@ body {
     list-style: none;
     width: 100%;
     justify-content: center;
+    height: 100%;
 }
 
 .navbar ul li {
-    margin: 0 1rem;
-    padding: 1rem;
-}
-
-.navbar ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: #f4f4f4;
+    display: inline;
+    margin: 0 6% 0 6%;
+    /* padding-inline: 6%; */
 }
 
 .navbar ul li a:hover {
-    color: skyblue;
+    background-color: skyblue;
+    background-clip: border-box;
+}
+@media screen and (max-width: 750px) {
+    /* For mobile phones: */
+    .navbar {
+        left: 30%;
+        width: 70%;
+    }
+    .navbar ul li {
+        display: inline;
+        margin: 6% 6% 0 6%;
+    }
 }
 
 section {
@@ -111,17 +123,22 @@ section#contact {
     left: 3%;
     top: 5.5%;
 }
-.f img{
-    width: 70%; height: auto
+
+.f img {
+    width: 70%;
+    height: auto
 }
+
 .transform-active-f {
     height: 10%;
     width: 13.5%;
     left: 3%;
     top: 3%;
 }
+
 .transform-active-f img {
-    width: 70%; height: auto
+    width: 70%;
+    height: auto
 }
 
 .m {
@@ -135,19 +152,24 @@ section#contact {
     height: 7.5%;
     width: 10%;
     left: 17.5%;
-    top: 5.5%;  
+    top: 5.5%;
 }
-.m img{
-    width: 70%; height: auto
+
+.m img {
+    width: 70%;
+    height: auto
 }
+
 .transform-active-m {
     height: 10%;
     width: 13.5%;
     left: 14%;
     top: 3%;
 }
+
 .transform-active-m img {
-    width: 70%; height: auto
+    width: 70%;
+    height: auto
 }
 
 .transform {
@@ -157,6 +179,5 @@ section#contact {
     -ms-transition: all 2s ease;
     transition: all 2s ease;
 }
+
 /* Fido's tie and Image */
-
-
