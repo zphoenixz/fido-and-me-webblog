@@ -1,3 +1,5 @@
+// https://leocs.me/jquery-drawsvg/
+
 const path = require('path');
 
 const express = require('express');

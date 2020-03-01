@@ -21,7 +21,7 @@ body {
     scroll-snap-type: y mandatory;
     position: relative;
 }
-
+/* NAVBAR BEHAVIOR */
 .navbar {
     position: fixed;
     z-index: 1;
@@ -30,9 +30,10 @@ body {
 
     width: 40%;
     height: 7.5%;
+    display: inline-block;
+    vertical-align: middle;
+
 }
-
-
 
 .navbar a img {
     max-height: 100%;
@@ -50,25 +51,71 @@ body {
 .navbar ul li {
     display: inline;
     margin: 0 6% 0 6%;
-    /* padding-inline: 6%; */
+    /* animation-name: invokeFido;
+    animation-duration: 2s; */
+}
+#menu0f{
+    opacity: 0;
+}
+#menu1f{
+    opacity: 0;
+}
+#menu2f{
+    opacity: 0;
 }
 
-.navbar ul li a:hover {
-    background-color: skyblue;
-    background-clip: border-box;
+.navbar ul li a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    transition: 1s all ease;
 }
-@media screen and (max-width: 750px) {
-    /* For mobile phones: */
+
+.navbar ul li a:before {
+    /* background: #ff7675; */
+    background: rgb(230, 239, 243, 0.1);
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    z-index: -1;
+    transition: all 1.3s ease;
+    width: 100%;
+    height: 0%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    
+}
+.navbar ul li a:hover::before {
+    height: 400%;
+    width: 200%;
+}
+
+@media screen and (max-width: 500px) {
+    /* For mobile phones Vertical View */
     .navbar {
         left: 30%;
         width: 70%;
     }
     .navbar ul li {
-        display: inline;
+        display: inline-block;
         margin: 6% 6% 0 6%;
     }
 }
+/* NAVBAR Animation */
+/* @keyframes invokeFido{
+    0%{
+        transform: translateX(120px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+} */
 
+
+/* ---------------*/
 section {
     display: flex;
     flex-direction: column;
@@ -179,5 +226,7 @@ section#contact {
     -ms-transition: all 2s ease;
     transition: all 2s ease;
 }
+
+
 
 /* Fido's tie and Image */

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Smooth Scroll</title>
+    <title>Fido & Me</title>
     <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet" />
     <link rel="stylesheet" href="/css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,15 +15,17 @@
     <div class="container">
         <nav class="navbar">
             <ul>
-                <li>
+                <li id="menu0f">
                     <a href="#home_f">
                         <img src="/images/svg/home.svg">
                     </a>
                 </li>
-                <li><a href="#home_m">
+                <li id="menu1f">
+                    <a href="#blog_f">
                         <img src="/images/svg/blog_f.svg">
                     </a></li>
-                <li><a href="#service">
+                <li id="menu2f">
+                    <a href="#about_f">
                         <img src="/images/svg/about_f.svg">
                     </a>
                 </li>
@@ -49,7 +51,7 @@
 
 
 
-        <section id="home_m">
+        <section id="blog_f">
             <h1>About</h1>
             <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
         </section>
@@ -62,8 +64,10 @@
             <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p>
         </section>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="/js/home.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+    <script type="text/javascript" src="/js/libs/jquery.js"></script>
+    <script type="text/javascript" src="/js/libs/jquery.keyframes.js"></script>
+    <script src="/js/nav_animations.js"></script>
 </body>
 
 </html>
