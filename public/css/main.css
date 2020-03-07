@@ -64,6 +64,15 @@ body {
     opacity: 0;
 }
 
+#menu0m{
+    opacity: 0;
+}
+#menu1m{
+    opacity: 0;
+}
+#menu2m{
+    opacity: 0;
+}
 .navbar ul li a {
     position: relative;
     display: block;
@@ -91,17 +100,7 @@ body {
     width: 200%;
 }
 
-@media screen and (max-width: 500px) {
-    /* For mobile phones Vertical View */
-    .navbar {
-        left: 30%;
-        width: 70%;
-    }
-    .navbar ul li {
-        display: inline-block;
-        margin: 6% 6% 0 6%;
-    }
-}
+
 /* NAVBAR Animation */
 /* @keyframes invokeFido{
     0%{
@@ -227,6 +226,42 @@ section#contact {
     transition: all 2s ease;
 }
 
+.mf {
+    position: absolute;
+    display: flex;
+    justify-content: center;
 
+    width: 25%;
+    height: auto;
+    bottom: 0%;
+    left: 65%;
+}
+.mf img{
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 500px) {
+    /* For mobile phones Vertical View */
+    .navbar {
+        left: 30%;
+        width: 70%;
+    }
+    .navbar ul li {
+        display: inline-block;
+        margin: 6% 6% 0 6%;
+    }
+    .mf {
+
+        width: 70%;
+        height: auto;
+        bottom: 0%;
+        left: 30%;
+    }
+    .mf img{
+        width: 100%;
+        height: auto;
+    }
+}
 
 /* Fido's tie and Image */
