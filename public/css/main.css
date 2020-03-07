@@ -9,7 +9,7 @@ body {
     color: #fff;
     height: 100vh;
     line-height: 1.2;
-    overflow: hidden;
+    /* overflow: auto; */
 }
 
 .container {
@@ -20,7 +20,10 @@ body {
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
     position: relative;
+    overflow: auto;
+    overflow-x: hidden;
 }
+
 /* NAVBAR BEHAVIOR */
 .navbar {
     position: fixed;
@@ -54,25 +57,31 @@ body {
     /* animation-name: invokeFido;
     animation-duration: 2s; */
 }
-#menu0f{
-    opacity: 0;
-}
-#menu1f{
-    opacity: 0;
-}
-#menu2f{
+
+#menu0f {
     opacity: 0;
 }
 
-#menu0m{
+#menu1f {
     opacity: 0;
 }
-#menu1m{
+
+#menu2f {
     opacity: 0;
 }
-#menu2m{
+
+#menu0m {
     opacity: 0;
 }
+
+#menu1m {
+    opacity: 0;
+}
+
+#menu2m {
+    opacity: 0;
+}
+
 .navbar ul li a {
     position: relative;
     display: block;
@@ -93,26 +102,13 @@ body {
     width: 100%;
     height: 0%;
     transform: translate(-50%, -50%) rotate(45deg);
-    
+
 }
+
 .navbar ul li a:hover::before {
     height: 400%;
     width: 200%;
 }
-
-
-/* NAVBAR Animation */
-/* @keyframes invokeFido{
-    0%{
-        transform: translateX(120px);
-        opacity: 0;
-    }
-    100%{
-        transform: translateX(0px);
-        opacity: 1;
-    }
-} */
-
 
 /* ---------------*/
 section {
@@ -231,61 +227,66 @@ section#contact {
     display: flex;
     justify-content: center;
 
-    width: 25%;
-    height: auto;
     bottom: 0%;
     left: 70%;
+
+    height: 100%;
+    max-height: 80%;
+    width: auto;
+    overflow: hidden;
+    
 }
-.mf-fido img{
+
+/* .mf-fido img {
     width: 100%;
+    min-width: 400px;
     height: auto;
-}
+} */
 
 
 .mf-tie {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    bottom:5%;
-    margin:auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 5%;
+    margin: auto;
     width: 5%;
     height: auto;
     rotate: 180deg;
 }
 
-.mf-tie:hover{
+.mf-tie:hover {
     border-radius: 50%;
     width: 6vw;
-    height: 6vw; 
+    height: 6vw;
     background: rgb(230, 239, 243, 0.1);
-    
+
 }
 
 @media screen and (max-width: 500px) {
+
     /* For mobile phones Vertical View */
     .navbar {
         left: 30%;
         width: 70%;
     }
+
     .navbar ul li {
         display: inline-block;
         margin: 6% 6% 0 6%;
     }
-    .mf-fido {
 
-        width: 65%;
-        height: auto;
-        bottom: 0%;
-        left: 35%;
-    }
-    .mf-fido img{
-        width: 100%;
-        height: auto;
-    }
     .mf-tie {
         width: 20%;
     }
+}
+@media screen and (max-width: 768px) {
+
+    .mf-fido {
+        left: 50%;      
+    }
+
 }
 
 /* Fido's tie and Image */
