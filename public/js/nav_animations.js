@@ -1,7 +1,8 @@
 function navAnimate(name, animation, direction, tieDirection, opacity) {
-    $("#menu0" + name).css("opacity", opacity);
-    $("#menu1" + name).css("opacity", opacity);
-    $("#menu2" + name).css("opacity", opacity);
+    // $("#menu" + name).css("transform", 'translateX(100%)');
+    // $("#menu" + name).css("transform", 'translateX(100%)');
+    // $("#menu" + name).css("transform", 'translateX(100%)');
+
 
     $('#mf-tie').playKeyframe({
         name: 'tieRotation',
@@ -32,8 +33,30 @@ function navAnimate(name, animation, direction, tieDirection, opacity) {
         timingFunction: "ease",
         direction: direction
     });
+    $("#menu0" + name).css("opacity", opacity);
+    $("#menu1" + name).css("opacity", opacity);
+    $("#menu2" + name).css("opacity", opacity);
+
 }
 
+function navAnimateSingle(newName, prevName, animation, direction, opacity, image){
+    
+
+    $("#menu" + prevName).css("opacity", opacity);
+    $("#menu" + prevName).css("transform", 'translateX(0)');
+
+    $('#menu'+ prevName + "> img").attr("src", image);
+    $('#menu' + prevName).attr("id", "menu" + newName);
+    $('#menu' + newName).playKeyframe({
+        name: animation,
+        duration: "1000ms",
+        delay: "50ms",
+        timingFunction: "ease",
+        direction: direction
+    });
+    
+    
+}
 $.keyframe.define([{
     name: 'navBarAnim',
     from: {
@@ -121,39 +144,20 @@ $(".button-title").click(function () {
             direction: 'normal'
         });
 
-        navAnimate('f', 'navBarAnim', 'reverse', 'reverse', "1");
 
+        navAnimate('f', 'navBarAnim', 'reverse', 'reverse', "1");
         setTimeout(function () {
-            $('#menu0f').attr("id", "menu0m");
-            $('#menu0m').playKeyframe({
-                name: 'navBarAnim',
-                duration: "1000ms",
-                delay: "50ms",
-                timingFunction: "ease",
-                direction: 'normal'
-            });
+            console.log('me')
+            navAnimateSingle("0m", "0f","navBarAnim", "normal", "0", "/images/svg/home.svg");
+
         }, 1000);
         setTimeout(function () {
-            $('#menu1f').find('img').attr("src", "/images/svg/blog_m.svg");
-            $('#menu1f').attr("id", "menu1m");
-            $('#menu1m').playKeyframe({
-                name: 'navBarAnim',
-                duration: "1000ms",
-                delay: "50ms",
-                timingFunction: "ease",
-                direction: 'normal'
-            });
+            navAnimateSingle("1m", "1f","navBarAnim", "normal", "0", "/images/svg/blog_m.svg");
+
         }, 1500);
         setTimeout(function () {
-            $('#menu2f').find('img').attr("src", "/images/svg/about_m.svg");
-            $('#menu2f').attr("id", "menu2m");
-            $('#menu2m').playKeyframe({
-                name: 'navBarAnim',
-                duration: "1000ms",
-                delay: "50ms",
-                timingFunction: "ease",
-                direction: 'normal'
-            });
+            navAnimateSingle("2m", "2f","navBarAnim", "normal", "0", "/images/svg/about_m.svg");
+
             $('#mf-tie').playKeyframe({
                 name: 'tieFirstRotation2',
                 duration: "1000ms",
@@ -177,36 +181,13 @@ $(".button-title").click(function () {
         navAnimate('m', 'navBarAnim', 'reverse', 'normal', "1");
 
         setTimeout(function () {
-            $('#menu0m').attr("id", "menu0f");
-            $('#menu0f').playKeyframe({
-                name: 'navBarAnim',
-                duration: "1000ms",
-                delay: "50ms",
-                timingFunction: "ease",
-                direction: 'normal'
-            });
+            navAnimateSingle("0f", "0m","navBarAnim", "normal", "0", "/images/svg/home.svg");
         }, 1000);
         setTimeout(function () {
-            $('#menu1m').find('img').attr("src", "/images/svg/blog_f.svg");
-            $('#menu1m').attr("id", "menu1f");
-            $('#menu1f').playKeyframe({
-                name: 'navBarAnim',
-                duration: "1000ms",
-                delay: "50ms",
-                timingFunction: "ease",
-                direction: 'normal'
-            });
+            navAnimateSingle("1f", "1m","navBarAnim", "normal", "0", "/images/svg/blog_f.svg");
         }, 1500);
         setTimeout(function () {
-            $('#menu2m').find('img').attr("src", "/images/svg/about_f.svg");
-            $('#menu2m').attr("id", "menu2f");
-            $('#menu2f').playKeyframe({
-                name: 'navBarAnim',
-                duration: "1000ms",
-                delay: "50ms",
-                timingFunction: "ease",
-                direction: 'normal'
-            });
+            navAnimateSingle("2f", "2m","navBarAnim", "normal", "0", "/images/svg/about_f.svg");
 
             $('#mf-tie').playKeyframe({
                 name: 'tieFirstRotation1',
