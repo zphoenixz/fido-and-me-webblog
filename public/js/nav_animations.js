@@ -12,53 +12,79 @@ function navAnimate(name, animation, direction, tieDirection, opacity) {
         direction: tieDirection
     });
 
-    $('#menu0' + name).playKeyframe({
-        name: animation,
-        duration: "1000ms",
-        delay: "0ms",
-        timingFunction: "ease",
-        direction: direction
-    });
-    $('#menu1' + name).playKeyframe({
-        name: animation,
-        duration: "1000ms",
-        delay: "500ms",
-        timingFunction: "ease",
-        direction: direction
-    });
-    $('#menu2' + name).playKeyframe({
-        name: animation,
-        duration: "1000ms",
-        delay: "1000ms",
-        timingFunction: "ease",
-        direction: direction
-    });
+    if(direction == "normal"){        
+        $('#menu0' + name).playKeyframe({
+            name: 'navBarAnimForward',
+            duration: "1000ms",
+            delay: "0ms",
+            timingFunction: "ease",
+            direction: "normal"
+        });
+        $('#menu1' + name).playKeyframe({
+            name: 'navBarAnimForward',
+            duration: "1000ms",
+            delay: "500ms",
+            timingFunction: "ease",
+            direction: "normal"
+        });
+        $('#menu2' + name).playKeyframe({
+            name: 'navBarAnimForward',
+            duration: "1000ms",
+            delay: "1000ms",
+            timingFunction: "ease",
+            direction: "normal"
+        });
+    }else{
+        $('#menu0' + name).playKeyframe({
+            name: 'navBarAnimReverse',
+            duration: "1000ms",
+            delay: "0ms",
+            timingFunction: "ease",
+            direction: "normal"
+        });
+        $('#menu1' + name).playKeyframe({
+            name: 'navBarAnimReverse',
+            duration: "1000ms",
+            delay: "500ms",
+            timingFunction: "ease",
+            direction: "normal"
+        });
+        $('#menu2' + name).playKeyframe({
+            name: 'navBarAnimReverse',
+            duration: "1000ms",
+            delay: "1000ms",
+            timingFunction: "ease",
+            direction: "normal"
+        });
+    }
+
+
     $("#menu0" + name).css("opacity", opacity);
     $("#menu1" + name).css("opacity", opacity);
     $("#menu2" + name).css("opacity", opacity);
 
 }
 
-function navAnimateSingle(newName, prevName, animation, direction, opacity, image){
-    
+function navAnimateSingle(newName, prevName, animation, direction, opacity, image) {
+
 
     $("#menu" + prevName).css("opacity", opacity);
     $("#menu" + prevName).css("transform", 'translateX(0)');
 
-    $('#menu'+ prevName + "> img").attr("src", image);
+    $('#menu' + prevName + "> img").attr("src", image);
     $('#menu' + prevName).attr("id", "menu" + newName);
     $('#menu' + newName).playKeyframe({
         name: animation,
         duration: "1000ms",
-        delay: "50ms",
+        delay: "0ms",
         timingFunction: "ease",
         direction: direction
     });
-    
-    
+
+
 }
 $.keyframe.define([{
-    name: 'navBarAnim',
+    name: 'navBarAnimForward',
     from: {
         'transform': 'translateX(100%)',
         'opacity': '0'
@@ -66,6 +92,17 @@ $.keyframe.define([{
     to: {
         'transform': 'translateX(0px)',
         'opacity': '1'
+    }
+}, {
+    name: 'navBarAnimReverse',
+    from: {
+        'transform': 'translateX(0px)',
+        'opacity': '1'
+    },
+    to: {
+        'transform': 'translateX(100%)',
+        'opacity': '0'
+
     }
 }, {
     name: 'tieRotation',
@@ -77,20 +114,6 @@ $.keyframe.define([{
     }
 }, {
     name: 'tieFirstRotation1',
-    '0%': {
-        'transform': 'rotate(180deg)'
-    },
-    '25%': {
-        'transform': 'rotate(210deg)'
-    },
-    '50%': {
-        'transform': 'rotate(150deg)'
-    },
-    '100%': {
-        'transform': 'rotate(180deg)'
-    }
-}, {
-    name: 'tieFirstRotation2',
     '0%': {
         'transform': 'rotate(0deg)'
     },
@@ -104,13 +127,27 @@ $.keyframe.define([{
         'transform': 'rotate(0deg)'
     }
 }, {
+    name: 'tieFirstRotation2',
+    '0%': {
+        'transform': 'rotate(180deg)'
+    },
+    '25%': {
+        'transform': 'rotate(210deg)'
+    },
+    '50%': {
+        'transform': 'rotate(150deg)'
+    },
+    '100%': {
+        'transform': 'rotate(180deg)'
+    }
+}, {
     name: 'backgroundChange',
     from: {
         'box-shadow': 'inset 0 0 0 1000px rgba(59, 76, 102, 0.6)',
     },
     to: {
         'box-shadow': 'inset 0 0 0 1000px rgba(42, 58, 59, 0.5)',
-        
+
     }
 }]);
 
@@ -145,18 +182,18 @@ $(".button-title").click(function () {
         });
 
 
-        navAnimate('f', 'navBarAnim', 'reverse', 'reverse', "1");
+        navAnimate('f', 'navBarAnim', 'reverse', 'normal', "1");
         setTimeout(function () {
             console.log('me')
-            navAnimateSingle("0m", "0f","navBarAnim", "normal", "0", "/images/svg/home.svg");
+            navAnimateSingle("0m", "0f", "navBarAnimForward", "normal", "0", "/images/svg/home.svg");
 
         }, 1000);
         setTimeout(function () {
-            navAnimateSingle("1m", "1f","navBarAnim", "normal", "0", "/images/svg/blog_m.svg");
+            navAnimateSingle("1m", "1f", "navBarAnimForward", "normal", "0", "/images/svg/blog_m.svg");
 
         }, 1500);
         setTimeout(function () {
-            navAnimateSingle("2m", "2f","navBarAnim", "normal", "0", "/images/svg/about_m.svg");
+            navAnimateSingle("2m", "2f", "navBarAnimForward", "normal", "0", "/images/svg/about_m.svg");
 
             $('#mf-tie').playKeyframe({
                 name: 'tieFirstRotation2',
@@ -178,16 +215,16 @@ $(".button-title").click(function () {
             direction: 'reverse'
         });
 
-        navAnimate('m', 'navBarAnim', 'reverse', 'normal', "1");
+        navAnimate('m', 'navBarAnim', 'reverse', 'reverse', "1");
 
         setTimeout(function () {
-            navAnimateSingle("0f", "0m","navBarAnim", "normal", "0", "/images/svg/home.svg");
+            navAnimateSingle("0f", "0m", "navBarAnimForward", "normal", "0", "/images/svg/home.svg");
         }, 1000);
         setTimeout(function () {
-            navAnimateSingle("1f", "1m","navBarAnim", "normal", "0", "/images/svg/blog_f.svg");
+            navAnimateSingle("1f", "1m", "navBarAnimForward", "normal", "0", "/images/svg/blog_f.svg");
         }, 1500);
         setTimeout(function () {
-            navAnimateSingle("2f", "2m","navBarAnim", "normal", "0", "/images/svg/about_f.svg");
+            navAnimateSingle("2f", "2m", "navBarAnimForward", "normal", "0", "/images/svg/about_f.svg");
 
             $('#mf-tie').playKeyframe({
                 name: 'tieFirstRotation1',
