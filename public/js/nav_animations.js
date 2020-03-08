@@ -66,6 +66,8 @@ function navAnimate(name, animation, direction, tieDirection, opacity) {
 }
 
 function navAnimateSingle(newName, prevName, animation, direction, opacity, image) {
+
+
     $("#menu" + prevName).css("opacity", opacity);
     $("#menu" + prevName).css("transform", 'translateX(0)');
 
@@ -74,7 +76,7 @@ function navAnimateSingle(newName, prevName, animation, direction, opacity, imag
     $('#menu' + newName).playKeyframe({
         name: animation,
         duration: "1000ms",
-        delay: "10ms",
+        delay: "0ms",
         timingFunction: "ease",
         direction: direction
     });
