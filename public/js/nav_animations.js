@@ -94,6 +94,14 @@ $.keyframe.define([{
         'opacity': '1'
     }
 }, {
+    name: 'wait',
+    from: {
+        'opacity': '1'
+    },
+    to: {
+        'opacity': '1'
+    }
+},{
     name: 'navBarAnimReverse',
     from: {
         'transform': 'translateX(0px)',
@@ -115,30 +123,52 @@ $.keyframe.define([{
 }, {
     name: 'tieFirstRotation1',
     '0%': {
-        'transform': 'rotate(0deg)'
+        'transform': 'rotate(0deg)',
+        'border-radius': '0%',
+        'background': 'rgb(230, 239, 243, 0.0)'
     },
-    '25%': {
-        'transform': 'rotate(30deg)'
+    '10%': {
+        'transform': 'rotate(5deg)'
+    },
+    '20%': {
+        'transform': 'rotate(-5deg)'
+    },
+    '30%': {
+        'transform': 'rotate(0deg)'
     },
     '50%': {
-        'transform': 'rotate(-30deg)'
+        'border-radius': '50%',
+        'background': 'rgb(230, 239, 243, 0.1)'
     },
     '100%': {
-        'transform': 'rotate(0deg)'
+        'transform': 'rotate(0deg)',
+        'border-radius': '0%',
+        'background': 'rgb(230, 239, 243, 0.0)'
     }
 }, {
     name: 'tieFirstRotation2',
     '0%': {
-        'transform': 'rotate(180deg)'
+        'transform': 'rotate(180deg)',
+        'border-radius': '0%',
+        'background': 'rgb(230, 239, 243, 0.0)'
     },
-    '25%': {
-        'transform': 'rotate(210deg)'
+    '10%': {
+        'transform': 'rotate(185deg)'
+    },
+    '20%': {
+        'transform': 'rotate(175deg)'
+    },
+    '30%': {
+        'transform': 'rotate(180deg)'
     },
     '50%': {
-        'transform': 'rotate(150deg)'
+        'border-radius': '50%',
+        'background': 'rgb(230, 239, 243, 0.1)'
     },
     '100%': {
-        'transform': 'rotate(180deg)'
+        'transform': 'rotate(180deg)',
+        'border-radius': '0%',
+        'background': 'rgb(230, 239, 243, 0.0)'
     }
 }, {
     name: 'backgroundChange',
@@ -155,7 +185,7 @@ navAnimate('f', 'navBarAnim', 'normal', 'normal', "0");
 
 $('#mf-tie').playKeyframe({
     name: 'tieFirstRotation1',
-    duration: "1000ms",
+    duration: "2200ms",
     iterationCount: 'infinite',
     delay: "0ms",
     timingFunction: "ease",
@@ -181,7 +211,6 @@ $(".button-title").click(function () {
             direction: 'normal'
         });
 
-
         navAnimate('f', 'navBarAnim', 'reverse', 'normal', "1");
         setTimeout(function () {
             console.log('me')
@@ -197,7 +226,7 @@ $(".button-title").click(function () {
 
             $('#mf-tie').playKeyframe({
                 name: 'tieFirstRotation2',
-                duration: "1000ms",
+                duration: "2200ms",
                 iterationCount: 'infinite',
                 delay: "0ms",
                 timingFunction: "ease",
@@ -228,7 +257,7 @@ $(".button-title").click(function () {
 
             $('#mf-tie').playKeyframe({
                 name: 'tieFirstRotation1',
-                duration: "1000ms",
+                duration: "2200ms",
                 iterationCount: 'infinite',
                 delay: "0ms",
                 timingFunction: "ease",
