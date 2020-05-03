@@ -28,7 +28,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "firebase-admin": "^8.11.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquerykeyframes": "^1.0.8"
   },
   "devDependencies": {
