@@ -1,9 +1,22 @@
 // https://leocs.me/jquery-drawsvg/
+require('dotenv').config();
 const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000
+
+// var admin = require("firebase-admin");
+
+// var serviceAccount = require("./fidoandme-backend-firebase-adminsdk-hhjvc-a09b79cff2.json");
+
+// admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount),
+//     databaseURL: "https://fidoandme-backend.firebaseio.com"
+// });
+
+// const database = admin.firestore();
+
 
 
 const errorController = require('./controllers/error');
@@ -13,8 +26,8 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const rootRoutes = require('./routes/root');
-const myRoutes = require('./routes/me');
-const fidosRoutes = require('./routes/fido');
+const authRoutes = require('./routes/auth');
+const fidosRoutes = require('./routes/blog');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -23,7 +36,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', rootRoutes);
 app.use('/home', rootRoutes);
-
+app.use('/admin', authRoutes);
 
 app.use(errorController.get404);
 
