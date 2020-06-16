@@ -19,7 +19,7 @@ var sslRedirect = require('heroku-ssl-redirect');
 // const database = admin.firestore();
 
 
-
+app.use(sslRedirect());
 const errorController = require('./controllers/error');
 const app = express();
 
