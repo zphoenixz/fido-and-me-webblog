@@ -28,6 +28,7 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "firebase-admin": "^8.11.0",
+    "heroku-ssl-redirect": "0.0.4",
     "http": "0.0.1-security",
     "jquery": "^3.5.0",
     "jquerykeyframes": "^1.0.8"

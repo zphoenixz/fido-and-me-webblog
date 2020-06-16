@@ -6,7 +6,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000
-
+var sslRedirect = require('heroku-ssl-redirect');
 // var admin = require("firebase-admin");
 
 // var serviceAccount = require("./fidoandme-backend-firebase-adminsdk-hhjvc-a09b79cff2.json");
