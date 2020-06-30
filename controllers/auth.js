@@ -12,7 +12,7 @@ const analyticsCollection = database.collection('analytics');
 exports.postSession = (req, res, next) => {
     let session = req.body;
 
-    // console.log(session)
+    console.log(session)
     // console.log(session.country)
 
     const analytic = analyticsCollection.doc();
