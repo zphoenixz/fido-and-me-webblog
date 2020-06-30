@@ -5,7 +5,7 @@ function analytics(){
     fetch('https://api.ipify.org/?format=json').then(function(response) {
         response.json().then(function(data) {
             // console.log(data.ip)
-            fetch('ip-api.com/json/' + data.ip + '?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query').then(function(response) {
+            fetch('//ip-api.com/json/' + data.ip + '?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,district,zip,lat,lon,timezone,currency,isp,org,as,asname,reverse,mobile,proxy,hosting,query').then(function(response) {
                 response.json().then(function(data) {
                     // console.log(data)
                     let date = new Date();
