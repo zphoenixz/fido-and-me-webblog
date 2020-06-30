@@ -6,6 +6,6 @@ const authController = require('../controllers/auth');
 
 const router = express.Router();
 
-router.post('/user/session', authController.postSession);
+router.post('/analytics', authController.postSession);
 
 module.exports = router;

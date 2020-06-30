@@ -31,7 +31,8 @@
     "heroku-ssl-redirect": "0.0.4",
     "http": "0.0.1-security",
     "jquery": "^3.5.0",
-    "jquerykeyframes": "^1.0.8"
+    "jquerykeyframes": "^1.0.8",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
