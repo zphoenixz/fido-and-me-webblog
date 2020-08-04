@@ -3,94 +3,623 @@
 
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Fido & Me</title>
     <link href="https://fonts.googleapis.com/css?family=Dosis:300,400,700" rel="stylesheet" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/themify-icons.css">
+    <link rel="stylesheet" href="/css/nice-select.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/gijgo.css">
+    <link rel="stylesheet" href="/css/animate.min.css">
+    <link rel="stylesheet" href="/css/slick.css">
+    <link rel="stylesheet" href="/css/slicknav.css">
+    <link rel="stylesheet" href="/css/style.css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="google-site-verification" content="sOl8-oeoQbOjO-u3d2HEuA_OP401DUM0Vx1A6wc_808" />
 </head>
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <body onload="analytics()">
 
-    <div class="container">
-        <nav class="navbar">
-            <ul>
-                <li id="menu0 f">
-                    <a id="menu0f" name="menu0" href="#home_f">
-                        <img src="/images/svg/home.svg">
+
+    <!-- New section          ------------------------------------------------------------------------------------------>
+    <!-- slider_area_start -->
+    <div class="slider_area" id="home_f">
+        <div class="single_slider  d-flex align-items-center slider_bg_1">
+            <!-- <div class="outline_text d-none d-lg-block">
+                Portfolio
+            </div> -->
+            <div class="container">
+                <nav class="navbar">
+                    <ul>
+                        <li id="menu0 f">
+                            <a id="menu0f" name="menu0" href="#home_f">
+                                <img src="/images/svg/home.svg">
+                            </a>
+                        </li>
+                        <li id="menu1 f">
+                            <a id="menu1f" name="menu1" href="#blog_f">
+                                <img src="/images/svg/blog_f.svg">
+                            </a>
+                        </li>
+                        <li id="menu2 f">
+                            <a id="menu2f" name="menu2" href="#about_f">
+                                <img src="/images/svg/about_f.svg">
+                            </a>
+                        </li>
+                        <!-- <li><a href="#contact"></a></li> -->
+                    </ul>
+                </nav>
+                <div class="row align-items-center justify-content-center">
+                    <section id="home_f">
+                        <a href="/#" class="button-title">
+                            <div class="f transform transform-active-f">
+                                <img src="/images/svg/fido.svg">
+                            </div>
+                        </a>
+                        <a href="/#" class="button-title">
+                            <div class="m transform">
+                                <img src="/images/svg/me.svg">
+                            </div>
+                        </a>
+                        <a href="/#" class="button-title">
+                            <!-- <div class="mf-fido"> -->
+                            <img class="mf-fido" src="/images/fido.png">
+                            <!-- </div> -->
+                        </a>
+                        <a href="/#" class="button-title">
+                            <img id="mf-tie" class="mf-tie" src="/images/svg/tie.svg">
+                        </a>
+                    </section>
+                </div>
+
+                <div class="middle">
+                    <a class="btn" href="https://www.linkedin.com/in/ramiro-valdez/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
                     </a>
-                </li>
-                <li id="menu1 f">
-                    <a id="menu1f" name="menu1" href="#blog_f">
-                        <img src="/images/svg/blog_f.svg">
+                    <a class="btn" href="https://twitter.com/Phoenix97432180" target="_blank">
+                        <i class="fab fa-twitter"></i>
                     </a>
-                </li>
-                <li id="menu2 f">
-                    <a id="menu2f" name="menu2" href="#about_f">
-                        <img src="/images/svg/about_f.svg">
+                    <a class="btn" href="https://www.instagram.com/phoenixz10/" target="_blank">
+                        <i class="fab fa-instagram"></i>
                     </a>
-                </li>
-                <!-- <li><a href="#contact"></a></li> -->
-            </ul>
-        </nav>
+                    <a class="btn" href="https://rive.app/a/zphoenixz/" target="_blank">
+                        <i class="fas fa-dragon"></i>
+                    </a>
+                    <a class="btn" href="https://github.com/zphoenixz" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
 
 
-        <section id="home_f">
-            <a href="/#" class="button-title">
-                <div class="f transform transform-active-f">
-                    <img src="/images/svg/fido.svg">
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+    <!-- Modal -->
+
+
+    <div class="portfolio_area">
+        <!-- <div class="container-fluid p-0"> -->
+        <div class="portfolio_wrap">
+            <a href="" data-toggle="modal" data-target="#exampleModalLong">
+                <div class=" single_gallery">
+                    <div class="thumb">
+                        <img src="/images/portfolio/1.png" alt="">
+                    </div>
+                    <div class="gallery_hover">
+                        <div class="hover_inner">
+                            <span>Mobile App</span>
+                            <h3>Ubar Mobile App</h3>
+                        </div>
+                    </div>
                 </div>
             </a>
-            <a href="/#" class="button-title">
-                <div class="m transform">
-                    <img src="/images/svg/me.svg">
+
+            <div class="single_gallery small_width">
+                <div class="thumb">
+                    <img src="/images/portfolio/2.png" alt="">
                 </div>
-            </a>
+                <div class="gallery_hover">
+                    <div class="hover_inner">
+                        <span>Mobile App</span>
+                        <a href="work_details.html">
+                            <h3>Ubar Mobile App</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="single_gallery">
+                <div class="thumb">
+                    <img src="/images/portfolio/3.png" alt="">
+                </div>
+                <div class="gallery_hover">
+                    <div class="hover_inner">
+                        <span>Mobile App</span>
+                        <a href="work_details.html">
+                            <h3>Ubar Mobile App</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class=" single_gallery">
+                <div class="thumb">
+                    <img src="/images/portfolio/4.png" alt="">
+                </div>
+                <div class="gallery_hover">
+                    <div class="hover_inner">
+                        <span>Mobile App</span>
+                        <a href="work_details.html">
+                            <h3>Ubar Mobile App</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="single_gallery">
+                <div class="thumb">
+                    <img src="/images/portfolio/5.png" alt="">
+                </div>
+                <div class="gallery_hover">
+                    <div class="hover_inner">
+                        <span>Mobile App</span>
+                        <a href="work_details.html">
+                            <h3>Ubar Mobile App</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class=" single_gallery small_width">
+                <div class="thumb">
+                    <img src="/images/portfolio/6.png" alt="">
+                </div>
+                <div class="gallery_hover">
+                    <div class="hover_inner">
+                        <span>Mobile App</span>
+                        <a href="work_details.html">
+                            <h3>Ubar Mobile App</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="single_gallery">
+                <div class="thumb">
+                    <img src="/images/portfolio/7.png" alt="">
+                </div>
+                <div class="gallery_hover">
+                    <div class="hover_inner">
+                        <span>Mobile App</span>
+                        <a href="work_details.html">
+                            <h3>Ubar Mobile App</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class=" single_gallery small_width">
+                <div class="thumb">
+                    <img src="/images/portfolio/8.png" alt="">
+                </div>
+                <div class="gallery_hover">
+                    <div class="hover_inner">
+                        <span>Mobile App</span>
+                        <a href="work_details.html">
+                            <h3>Ubar Mobile App</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class=" single_gallery">
+                <div class="thumb">
+                    <img src="/images/portfolio/9.png" alt="">
+                </div>
+                <div class="gallery_hover">
+                    <div class="hover_inner">
+                        <span>Mobile App</span>
+                        <a href="work_details.html">
+                            <h3>Ubar Mobile App</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            <a href="/#" class="button-title">
-                <!-- <div class="mf-fido"> -->
-                <img class="mf-fido" src="/images/fido.png">
-                <!-- </div> -->
-            </a>
-
-            <a href="/#" class="button-title">
-                <img id="mf-tie" class="mf-tie" src="/images/svg/tie.svg">
-            </a>
-
-            <!-- <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi, quis!</p> -->
-        </section>
-
-
-
-        <section id="blog_f">
-            <h1>Blog Feed</h1>
-            <p class="lead">This page is yet to be finnished :(.</p>
-        </section>
-        <section id="about_f">
-            <h1>About </h1>
-            <p class="lead">This page is yet to be finnished :(</p>
-        </section>
+    <!-- service_area  -->
+    <div class="service_area">
+        <div class="outline_text white d-none d-lg-block">
+            Services
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="icon">
+                            <img src="/images/svg/1.svg" alt="">
+                        </div>
+                        <h3>3D Modeling</h3>
+                        <p>A wonderful serenity has taken to the <br> possession of my entire soul network <br>
+                            infrastructure, including consolidation of <br> established network designed and</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="icon">
+                            <img src="/images/svg/2.svg" alt="">
+                        </div>
+                        <h3>UI/UX Design</h3>
+                        <p>A wonderful serenity has taken to the <br> possession of my entire soul network <br>
+                            infrastructure, including consolidation of <br> established network designed and</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="single_service">
+                        <div class="icon">
+                            <img src="/images/svg/3.svg" alt="">
+                        </div>
+                        <h3>Architectural Design</h3>
+                        <p>A wonderful serenity has taken to the <br> possession of my entire soul network <br>
+                            infrastructure, including consolidation of <br> established network designed and</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ service_area  -->
+    <div class="creative_blog_area">
+        <div class="outline_text blog d-none d-lg-block ">
+            Blog
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 col-md-6">
+                    <div class="blog_title">
+                        <h3>Our Creative Articles</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="more_blog">
+                        <a href="#" class="boxed-btn3">More Blogs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="creative_blog_active owl-carousel">
+                        <div class="single_blog">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="/images/blog/1.png" alt="">
+                                </a>
+                            </div>
+                            <div class="blog_content">
+                                <a href="#">
+                                    <span class="date">October 19, 2019</span>
+                                </a>
+                                <a href="#">
+                                    <h3>Industry as their over draft</h3>
+                                </a>
+                                <div class="owner_info">
+                                    <div class="author_thumb">
+                                        <img src="/images/blog/author2.png" alt="">
+                                    </div>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Mesica Chouhan</h4>
+                                        </a>
+                                        <p>Business Owner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="/images/blog/2.png" alt="">
+                                </a>
+                            </div>
+                            <div class="blog_content">
+                                <a href="#">
+                                    <span class="date">October 19, 2019</span>
+                                </a>
+                                <a href="#">
+                                    <h3>Construction their over draft</h3>
+                                </a>
+                                <div class="owner_info">
+                                    <div class="author_thumb">
+                                        <img src="/images/blog/author3.png" alt="">
+                                    </div>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Mesica Chouhan</h4>
+                                        </a>
+                                        <p>Business Owner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="/images/blog/3.png" alt="">
+                                </a>
+                            </div>
+                            <div class="blog_content">
+                                <a href="#">
+                                    <span class="date">October 19, 2019</span>
+                                </a>
+                                <a href="#">
+                                    <h3>Industry as their over draft</h3>
+                                </a>
+                                <div class="owner_info">
+                                    <div class="author_thumb">
+                                        <img src="/images/blog/author.png" alt="">
+                                    </div>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Mesica Chouhan</h4>
+                                        </a>
+                                        <p>Business Owner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_blog">
+                            <div class="thumb">
+                                <a href="#">
+                                    <img src="/images/blog/4.png" alt="">
+                                </a>
+                            </div>
+                            <div class="blog_content">
+                                <a href="#">
+                                    <span class="date">October 19, 2019</span>
+                                </a>
+                                <a href="#">
+                                    <h3>Industry as their over draft</h3>
+                                </a>
+                                <div class="owner_info">
+                                    <div class="author_thumb">
+                                        <img src="/images/blog/author.png" alt="">
+                                    </div>
+                                    <div class="info">
+                                        <a href="#">
+                                            <h4>Mesica Chouhan</h4>
+                                        </a>
+                                        <p>Business Owner</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
-    <div class="middle">
-        <a class="btn" href="https://www.linkedin.com/in/ramiro-valdez/" target="_blank">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a class="btn" href="https://twitter.com/Phoenix97432180" target="_blank">
-            <i class="fab fa-twitter"></i>
-        </a>
-        <a class="btn" href="https://www.instagram.com/phoenixz10/" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a class="btn" href="https://rive.app/a/zphoenixz/" target="_blank">
-            <i class="fas fa-dragon"></i>
-        </a> 
-        <a class="btn" href="https://github.com/zphoenixz" target="_blank">
-            <i class="fab fa-github"></i>
-        </a>
+
+    <!-- testimonial_area  -->
+    <div class="testimonial_area ">
+        <div class="outline_text white testmonial d-none d-lg-block">
+            Testimonial
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="testmonial_active owl-carousel">
+                        <div class="single_carousel">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="single_testmonial text-center">
+                                        <div class="thumb">
+                                            <img src="/images/testimonial/thumb.png" alt="">
+                                        </div>
+                                        <p>Innovative brewing methods and our coffee is sourced from various parts of
+                                            the globe and are roasted to perfection. </p>
+                                        <div class="testmonial_author">
+                                            <h3>Mesica Chouhan</h3>
+                                            <span>Mesica Chouhan</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="single_testmonial text-center">
+                                        <div class="thumb">
+                                            <img src="/images/testimonial/thumb.png" alt="">
+                                        </div>
+                                        <p>Innovative brewing methods and our coffee is sourced from various parts of
+                                            the globe and are roasted to perfection. </p>
+                                        <div class="testmonial_author">
+                                            <h3>Mesica Chouhan</h3>
+                                            <span>Mesica Chouhan</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-6">
+                                    <div class="single_testmonial text-center">
+                                        <div class="thumb">
+                                            <img src="/images/testimonial/thumb.png" alt="">
+                                        </div>
+                                        <p>Innovative brewing methods and our coffee is sourced from various parts of
+                                            the globe and are roasted to perfection. </p>
+                                        <div class="testmonial_author">
+                                            <h3>Mesica Chouhan</h3>
+                                            <span>Mesica Chouhan</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <!-- /testimonial_area  -->
+
+    <!-- discuss_projects_start  -->
+    <div class="discuss_projects">
+        <div class="outline_text white project d-none d-lg-block">
+            Let’s talk
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="project_text text-center">
+                        <h3>Let’s start your project with us</h3>
+                        <a class="boxed-btn3" href="#">Start Talking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- discuss_projects_end  -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="footer_widget">
+                            <div class="logo_footer">
+                                <a href="index.html">
+                                    <img src="/images/logo.png" alt="">
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Services
+                            </h3>
+                            <ul>
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">3D Modeling</a></li>
+                                <li><a href="#">Architectural Design</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Useful Links
+                            </h3>
+                            <ul>
+                                <li><a href="#">Work</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Follow Us
+                            </h3>
+                            <ul>
+                                <li><a href="#">Dribbble</a></li>
+                                <li><a href="#">Behance</a></li>
+                                <li><a href="#">Instagram</a></li>
+                                <li><a href="#">Facebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <p class="copy_right text-center">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
+                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href=""
+                                target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/ footer end  -->
+
+    <!-- JS here -->
+    <script src="/js/update/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="/js/update/vendor/jquery-1.12.4.min.js"></script>
+
+    <script src="/js/update/popper.min.js"></script>
+    <script src="/js/update/bootstrap.min.js"></script>
+    <script src="/js/update/owl.carousel.min.js"></script>
+    <script src="/js/update/isotope.pkgd.min.js"></script>
+    <script src="/js/update/ajax-form.js"></script>
+    <script src="/js/update/waypoints.min.js"></script>
+    <script src="/js/update/jquery.counterup.min.js"></script>
+    <script src="/js/update/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/update/scrollIt.js"></script>
+    <script src="/js/update/jquery.scrollUp.min.js"></script>
+    <script src="/js/update/wow.min.js"></script>
+    <script src="/js/update/nice-select.min.js"></script>
+    <script src="/js/update/jquery.slicknav.min.js"></script>
+    <script src="/js/update/jquery.magnific-popup.min.js"></script>
+    <script src="/js/update/plugins.js"></script>
+    <script src="/js/update/gijgo.min.js"></script>
+
+
+    <!--contact js-->
+    <!-- <script src="js/contact.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.form.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/mail-script.js"></script> -->
+
+    <script src="/js/main.js"></script>
+    <!-- New section -->
+
+
+
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
     <script type="text/javascript" src="/js/libs/jquery.js"></script>
     <script type="text/javascript" src="/js/libs/jquery.keyframes.js"></script>

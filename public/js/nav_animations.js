@@ -202,8 +202,8 @@ $(".button-title").click(function () {
     // }
 
     if (!$(".f.transform ").hasClass("transform-active-f")) {
-        $('section#home_f').css("box-shadow", 'inset 0 0 0 1000px rgba(59, 76, 102, 0.6)');
-        $('section#home_f').playKeyframe({
+        $('.slider_area#home_f').css("box-shadow", 'inset 0 0 0 1000px rgba(59, 76, 102, 0.6)');
+        $('.slider_area#home_f').playKeyframe({
             name: 'backgroundChange',
             duration: "1000ms",
             delay: "50ms",
@@ -235,8 +235,8 @@ $(".button-title").click(function () {
         }, 2000);
 
     } else {
-        $('section#home_f').css("box-shadow", 'inset 0 0 0 1000px rgba(42, 58, 59, 0.5)');
-        $('section#home_f').playKeyframe({
+        $('.slider_area#home_f').css("box-shadow", 'inset 0 0 0 1000px rgba(42, 58, 59, 0.5)');
+        $('.slider_area#home_f').playKeyframe({
             name: 'backgroundChange',
             duration: "1000ms",
             delay: "50ms",

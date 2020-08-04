@@ -117,8 +117,8 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100%;
-    height: 100%;
+    /* width: 10%;
+    height: 100%; */
 
     /* Scroll Snap */
     scroll-snap-align: center;
@@ -132,12 +132,14 @@ section h1 {
 }
 
 /* Section Images */
-section#home_f {
+
+.slider_area#home_f {
     background: url('/images/illimani.jpg') no-repeat center center/cover;
     box-shadow: inset 0 0 0 1000px rgba(59, 76, 102, 0.6);
 }
 
-section#home_m {
+
+.slider_area#home_m {
     background: url('/images/illimani.jpg') no-repeat center center/cover;
     box-shadow: inset 0 0 0 100vmax rgba(88, 117, 119, 0.6);
 }
@@ -163,7 +165,7 @@ section#contact {
     height: 7.5%;
     width: 10%;
     left: 3%;
-    top: 5.5%;
+    top: 7.5%;
 }
 
 .f img {
@@ -172,7 +174,7 @@ section#contact {
 }
 
 .transform-active-f {
-    height: 10%;
+    height: 12%;
     width: 13.5%;
     left: 3%;
     top: 3%;
@@ -194,7 +196,7 @@ section#contact {
     height: 7.5%;
     width: 10%;
     left: 17.5%;
-    top: 5.5%;
+    top: 7.5%;
 }
 
 .m img {
@@ -203,7 +205,7 @@ section#contact {
 }
 
 .transform-active-m {
-    height: 10%;
+    height: 12%;
     width: 13.5%;
     left: 14%;
     top: 3%;
@@ -251,8 +253,8 @@ section#contact {
     right: 0;
     bottom: 5%;
     margin: auto;
-    width: 6vw;
-    height: 6vw;
+    width: 6rem;
+    height: 6rem;
     /* rotate: 0deg; */
 }
 
@@ -264,18 +266,19 @@ section#contact {
 /* Social networks buttons*/
 .middle {
     position: absolute;
-    bottom: 00%;
+    bottom: 0.25rem;
+    left: 0.25rem;
     /* transform: translateY(-50%); */
-    width: 27.5%;  
+    width: 27.5%;
 }
 
 .btn {
     display: inline-block;
-    width: 13.8%;
-    height: 13.8%;
-    left: 9.6%;
-    background:rgb(255, 255, 255);
-    margin: 2px;
+    width: 3rem;
+    height: 3rem;
+    /* left: 1rem; */
+    background: rgb(255, 255, 255);
+    margin: 0.25rem;
     border-radius: 30%;
     border-style: solid;
     border-color: rgb(42, 58, 59, 1);
@@ -284,12 +287,13 @@ section#contact {
     color: rgb(42, 58, 59, 1);
     overflow: hidden;
     position: relative;
-    text-align: center;
+    /* text-align: center; */
+
 }
 
 .btn i {
-    line-height: 4vw;
-    font-size: 1.5vw;
+    line-height: 2rem;
+    font-size: 1.5rem;
     transition: 0.2s linear;
 }
 
@@ -307,45 +311,48 @@ section#contact {
 .btn::before {
     content: "";
     position: absolute;
-    width: 120%;
-    height: 120%;
+    width: 4.5rem;
+    height: 4.5rem;
     background: #212D40;
+
+    left: -5.25rem;
+    top: 3.75rem;
+    /* left: 0.75rem;
+    top: -3rem; */
     transform: rotate(45deg);
-    left: -110%;
-    top: 90%;
 }
 
 .btn:hover::before {
     animation: aaa 0.7s 1;
-    top: -10%;
-    left: -10%;
+    left: -0.75rem;
+    top: -0.75rem;
 }
 
 @keyframes aaa {
     0% {
-        left: -110%;
-        top: 90%;
+        left: -5.25rem;
+        top: 3.75rem;
     }
 
     50% {
-        left: 10%;
-        top: -30%;
+        left: 1.5rem;
+        top: -3rem;
     }
 
     100% {
-        top: -10%;
-        left: -10%;
+        left: -0.75rem;
+        top: -0.75rem;
     }
 }
 
 @media screen and (max-width: 768px) {
     .mf-fido {
-        left: 50%;
+        left: 65%;
     }
 
     .mf-tie {
-        width: 10vh;
-        height: 10vh;
+        width: 4rem;
+        height: 4rem;
     }
 
     .mf-tie:hover {
@@ -354,26 +361,36 @@ section#contact {
     }
 
 }
+
 @media screen and (max-width: 500px) {
+
     /* For mobile phones Vertical View */
     .navbar {
         left: 30%;
         width: 70%;
     }
+
     .navbar ul li {
         display: inline-block;
-        margin: 6% 6% 0 6%;
+        margin: 0% 3% 0 6%;
     }
+
     .btn {
-        width: 4vh;
-        height: 4vh;
+        width: 2rem;
+        height: 2rem;
     }
+
     .btn i {
-        line-height: 4vh;
-        font-size: 1.5vh;
-        transition: 0.2s linear;
+        line-height: 0rem;
+        font-size: 1rem;
     }
+
+    .btn:hover i {
+        transform: scale(1.3);
+    }
+
     .middle {
-        width: 10%;  
+        width: 10%;
     }
 }
+

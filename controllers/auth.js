@@ -31,15 +31,15 @@ exports.postSession = async (req, res, next) => {
                         timeZone: data.time_zone.name,
                     };
                     console.log(analyticsData);
-                    analytic.set(analyticsData, {
-                            merge: true
-                        })
-                        .then(() => {
-                            console.log('New analytic has been added successfully!');
-                        })
-                        .catch(error => {
-                            console.error(error);
-                        })
+                    // analytic.set(analyticsData, {
+                    //         merge: true
+                    //     })
+                    //     .then(() => {
+                    //         console.log('New analytic has been added successfully!');
+                    //     })
+                    //     .catch(error => {
+                    //         console.error(error);
+                    //     })
 
                 });
             })
