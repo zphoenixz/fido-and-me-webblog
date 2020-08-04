@@ -1,14 +1,19 @@
-// const Product = require('../models/product');
+const databaseService = require('../database/firestore');
+
+exports.getHome = async (req, res, next) => {
+    try {
+        var posts = await databaseService.getPosts();
+        
+        res.render('index', {
+            posts: posts,
+            path: '/'
+        });
+    } catch (error) {
+        console.log(error);
+    }
 
 
-exports.getHome = (req, res, next) => {
-    // fetch('https://api.ipify.org/?format=json')
-    //     .then(results => results.json)
-    //     .then(data => console.log(data.ip));
-    res.render('index', {
-        // prods: products,
-        pageTitle: 'Shop',
-        path: '/'
-    });
+
+
 
 };

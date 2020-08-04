@@ -272,7 +272,7 @@ section#contact {
     width: 27.5%;
 }
 
-.btn {
+.btnPortfolio {
     display: inline-block;
     width: 3rem;
     height: 3rem;
@@ -287,12 +287,13 @@ section#contact {
     color: rgb(42, 58, 59, 1);
     overflow: hidden;
     position: relative;
+    text-align: center;
     /* text-align: center; */
 
 }
 
-.btn i {
-    line-height: 2rem;
+.btnPortfolio i {
+    line-height: 2.8rem;
     font-size: 1.5rem;
     transition: 0.2s linear;
 }
@@ -302,13 +303,13 @@ section#contact {
     height: 8vw;
 } */
 
-.btn:hover i {
+.btnPortfolio:hover i {
     /* line-height: 8vw; */
     transform: scale(1.6);
     color: #f1f1f1;
 }
 
-.btn::before {
+.btnPortfolio::before {
     content: "";
     position: absolute;
     width: 4.5rem;
@@ -322,7 +323,7 @@ section#contact {
     transform: rotate(45deg);
 }
 
-.btn:hover::before {
+.btnPortfolio:hover::before {
     animation: aaa 0.7s 1;
     left: -0.75rem;
     top: -0.75rem;
@@ -375,17 +376,17 @@ section#contact {
         margin: 0% 3% 0 6%;
     }
 
-    .btn {
+    .btnPortfolio {
         width: 2rem;
         height: 2rem;
     }
 
-    .btn i {
+    .btnPortfolio i {
         line-height: 0rem;
         font-size: 1rem;
     }
 
-    .btn:hover i {
+    .btnPortfolio:hover i {
         transform: scale(1.3);
     }
 

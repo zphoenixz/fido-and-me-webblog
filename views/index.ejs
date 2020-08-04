@@ -25,233 +25,215 @@
 
     <meta name="google-site-verification" content="sOl8-oeoQbOjO-u3d2HEuA_OP401DUM0Vx1A6wc_808" />
 </head>
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
+
 
 <body onload="analytics()">
-
-
-    <!-- New section          ------------------------------------------------------------------------------------------>
-    <!-- slider_area_start -->
-    <div class="slider_area" id="home_f">
-        <div class="single_slider  d-flex align-items-center slider_bg_1">
-            <!-- <div class="outline_text d-none d-lg-block">
-                Portfolio
-            </div> -->
-            <div class="container">
-                <nav class="navbar">
-                    <ul>
-                        <li id="menu0 f">
-                            <a id="menu0f" name="menu0" href="#home_f">
-                                <img src="/images/svg/home.svg">
-                            </a>
-                        </li>
-                        <li id="menu1 f">
-                            <a id="menu1f" name="menu1" href="#blog_f">
-                                <img src="/images/svg/blog_f.svg">
-                            </a>
-                        </li>
-                        <li id="menu2 f">
-                            <a id="menu2f" name="menu2" href="#about_f">
-                                <img src="/images/svg/about_f.svg">
-                            </a>
-                        </li>
-                        <!-- <li><a href="#contact"></a></li> -->
-                    </ul>
-                </nav>
-                <div class="row align-items-center justify-content-center">
-                    <section id="home_f">
-                        <a href="/#" class="button-title">
-                            <div class="f transform transform-active-f">
-                                <img src="/images/svg/fido.svg">
-                            </div>
-                        </a>
-                        <a href="/#" class="button-title">
-                            <div class="m transform">
-                                <img src="/images/svg/me.svg">
-                            </div>
-                        </a>
-                        <a href="/#" class="button-title">
-                            <!-- <div class="mf-fido"> -->
-                            <img class="mf-fido" src="/images/fido.png">
-                            <!-- </div> -->
-                        </a>
-                        <a href="/#" class="button-title">
-                            <img id="mf-tie" class="mf-tie" src="/images/svg/tie.svg">
-                        </a>
-                    </section>
+    <% if(locals.posts){  %>
+    <script>
+        $('#lhcZ2dbk2veHhcGjNV0Z').on('hide.bs.modal', () => {
+            console.log("cerrad");
+            $('#ytplayer_lhcZ2dbk2veHhcGjNV0Z').attr('src', '');
+        });
+    </script>
+    <% posts.forEach(function(post, i) { %>
+    <div class="modal fade bd-example-modal-lg" id="<%= post.id %>" tabindex="-1" role="dialog"
+        aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myLargeModalLabel"><%= post.title %></h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
+                <div class="modal-body text-center">
 
-                <div class="middle">
-                    <a class="btn" href="https://www.linkedin.com/in/ramiro-valdez/" target="_blank">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a class="btn" href="https://twitter.com/Phoenix97432180" target="_blank">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a class="btn" href="https://www.instagram.com/phoenixz10/" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a class="btn" href="https://rive.app/a/zphoenixz/" target="_blank">
-                        <i class="fas fa-dragon"></i>
-                    </a>
-                    <a class="btn" href="https://github.com/zphoenixz" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                </div>
+                    <% if(post.media == "gallery"){  %>
+                    <div id="carousel_<%= post.id %>" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel_<%= post.id %>" data-slide-to="0<%= post.id %>" class="active">
+                            </li>
+                            <% for(let i=1; i< post.media_url.length-1;i++){%>
+                            <li data-target="#carousel_<%= post.id %>" data-slide-to="<%= i %><%= post.id %>"></li>
+                            <% }%>
+                        </ol>
+
+                        <div class="carousel-inner">
+                            <% for(let i=1; i< post.media_url.length;i++){%>
+
+                            <% if(i == 1){  %>
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="<%= post.media_url[i] %>" alt="First slide">
+                                <% } else if(i == 2){  %>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="<%= post.media_url[i] %>" alt="Second slide">
+                                    <% } else if(i == 3){  %>
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="<%= post.media_url[i] %>" alt="Third slide">
+                                        <% } else if(i == 4){  %>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="<%= post.media_url[i] %>"
+                                                alt="Fourth slide">
+                                            <% } %>
+                                        </div>
 
 
-            </div>
-        </div>
-    </div>
-    <!-- slider_area_end -->
-    <!-- Modal -->
+                                        <% }%>
+                                    </div>
+                                    <a class="carousel-control-prev" href="#carousel_<%= post.id %>" role="button"
+                                        data-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carousel_<%= post.id %>" role="button"
+                                        data-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                                <% } else{ %>
+                                <div class="embed-responsive embed-responsive-16by9">
 
 
-    <div class="portfolio_area">
-        <!-- <div class="container-fluid p-0"> -->
-        <div class="portfolio_wrap">
-            <a href="" data-toggle="modal" data-target="#exampleModalLong">
-                <div class=" single_gallery">
-                    <div class="thumb">
-                        <img src="/images/portfolio/1.png" alt="">
-                    </div>
-                    <div class="gallery_hover">
-                        <div class="hover_inner">
-                            <span>Mobile App</span>
-                            <h3>Ubar Mobile App</h3>
+                                    <iframe id="ytplayer_<%= post.id %>" width="1280" height="720"
+                                        src="<%= post.media_url[1] %>" frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope;"></iframe>
+
+                                </div>
+                                <script>
+                                    $('#<%= post.id %>').on('hide.bs.modal', () => {
+                                        console.log("cerrad");
+                                        $('#ytplayer_<%= post.id %>').attr('src', '');
+                                    });
+                                </script>
+                                <% }%>
+
+                                <p></p>
+                                <p></p>
+                                <p><%= post.content %> </p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary btn-block"
+                                    data-dismiss="modal">close</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </a>
 
-            <div class="single_gallery small_width">
-                <div class="thumb">
-                    <img src="/images/portfolio/2.png" alt="">
-                </div>
-                <div class="gallery_hover">
-                    <div class="hover_inner">
-                        <span>Mobile App</span>
-                        <a href="work_details.html">
-                            <h3>Ubar Mobile App</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_gallery">
-                <div class="thumb">
-                    <img src="/images/portfolio/3.png" alt="">
-                </div>
-                <div class="gallery_hover">
-                    <div class="hover_inner">
-                        <span>Mobile App</span>
-                        <a href="work_details.html">
-                            <h3>Ubar Mobile App</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class=" single_gallery">
-                <div class="thumb">
-                    <img src="/images/portfolio/4.png" alt="">
-                </div>
-                <div class="gallery_hover">
-                    <div class="hover_inner">
-                        <span>Mobile App</span>
-                        <a href="work_details.html">
-                            <h3>Ubar Mobile App</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_gallery">
-                <div class="thumb">
-                    <img src="/images/portfolio/5.png" alt="">
-                </div>
-                <div class="gallery_hover">
-                    <div class="hover_inner">
-                        <span>Mobile App</span>
-                        <a href="work_details.html">
-                            <h3>Ubar Mobile App</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class=" single_gallery small_width">
-                <div class="thumb">
-                    <img src="/images/portfolio/6.png" alt="">
-                </div>
-                <div class="gallery_hover">
-                    <div class="hover_inner">
-                        <span>Mobile App</span>
-                        <a href="work_details.html">
-                            <h3>Ubar Mobile App</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="single_gallery">
-                <div class="thumb">
-                    <img src="/images/portfolio/7.png" alt="">
-                </div>
-                <div class="gallery_hover">
-                    <div class="hover_inner">
-                        <span>Mobile App</span>
-                        <a href="work_details.html">
-                            <h3>Ubar Mobile App</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class=" single_gallery small_width">
-                <div class="thumb">
-                    <img src="/images/portfolio/8.png" alt="">
-                </div>
-                <div class="gallery_hover">
-                    <div class="hover_inner">
-                        <span>Mobile App</span>
-                        <a href="work_details.html">
-                            <h3>Ubar Mobile App</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class=" single_gallery">
-                <div class="thumb">
-                    <img src="/images/portfolio/9.png" alt="">
-                </div>
-                <div class="gallery_hover">
-                    <div class="hover_inner">
-                        <span>Mobile App</span>
-                        <a href="work_details.html">
-                            <h3>Ubar Mobile App</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+                <% }); %>
+                <% } %>
+                <!-- New section          ------------------------------------------------------------------------------------------>
+                <!-- slider_area_start -->
+                <div class="slider_area" id="home_f">
+                    <div class="single_slider  d-flex align-items-center slider_bg_1">
+                        <!-- <div class="outline_text d-none d-lg-block">
+                Portfolio
+            </div> -->
+                        <div class="container">
+                            <nav class="navbar">
+                                <ul>
+                                    <li id="menu0 f">
+                                        <a id="menu0f" name="menu0" href="#home_f">
+                                            <img src="/images/svg/home.svg">
+                                        </a>
+                                    </li>
+                                    <li id="menu1 f">
+                                        <a id="menu1f" name="menu1" href="#blog_me">
+                                            <img src="/images/svg/blog_f.svg">
+                                        </a>
+                                    </li>
+                                    <li id="menu2 f">
+                                        <a id="menu2f" name="menu2" href="#about_f">
+                                            <img src="/images/svg/about_f.svg">
+                                        </a>
+                                    </li>
+                                    <!-- <li><a href="#contact"></a></li> -->
+                                </ul>
+                            </nav>
+                            <div class="row align-items-center justify-content-center">
+                                <section id="home_f">
+                                    <a href="/#" class="button-title">
+                                        <div class="f transform transform-active-f">
+                                            <img src="/images/svg/fido.svg">
+                                        </div>
+                                    </a>
+                                    <a href="/#" class="button-title">
+                                        <div class="m transform">
+                                            <img src="/images/svg/me.svg">
+                                        </div>
+                                    </a>
+                                    <a href="/#" class="button-title">
+                                        <!-- <div class="mf-fido"> -->
+                                        <img class="mf-fido" src="/images/fido.png">
+                                        <!-- </div> -->
+                                    </a>
+                                    <a href="/#" class="button-title">
+                                        <img id="mf-tie" class="mf-tie" src="/images/svg/tie.svg">
+                                    </a>
+                                </section>
+                            </div>
 
-    <!-- service_area  -->
-    <div class="service_area">
+                            <div class="middle">
+                                <a class="btnPortfolio" href="https://www.linkedin.com/in/ramiro-valdez/"
+                                    target="_blank">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a class="btnPortfolio" href="https://twitter.com/Phoenix97432180" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a class="btnPortfolio" href="https://www.instagram.com/phoenixz10/" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a class="btnPortfolio" href="https://rive.app/a/zphoenixz/" target="_blank">
+                                    <i class="fas fa-dragon"></i>
+                                </a>
+                                <a class="btnPortfolio" href="https://github.com/zphoenixz" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- slider_area_end -->
+                <!-- Modal -->
+
+
+                <div class="portfolio_area" id="blog_me">
+                    <!-- <div class="container-fluid p-0"> -->
+                    <div class="portfolio_wrap">
+                        <% if(locals.posts){  %>
+                        <% var i = 0; %>
+                        <% posts.forEach(function(post, i) { %>
+
+                        <a href="" data-toggle="modal" data-target="#<%= post.id %>">
+                            <% if(i%2 == 0){  %>
+                            <div class=" single_gallery small_width">
+                                <% } else{ %>
+                                <div class=" single_gallery">
+                                    <% }%>
+                                    <div class="thumb">
+                                        <img src="<%= post.media_url[0] %>" alt="">
+                                    </div>
+                                    <div class="gallery_hover">
+                                        <div class="hover_inner">
+                                            <h3><%= post.title %></h3>
+                                        </div>
+                                    </div>
+                                </div>
+                        </a>
+                        <% }); %>
+                        <% } %>
+
+
+                    </div>
+                </div>
+
+                <!-- service_area  -->
+                <!-- <div class="service_area">
         <div class="outline_text white d-none d-lg-block">
             Services
         </div>
@@ -289,229 +271,30 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!--/ service_area  -->
-    <div class="creative_blog_area">
-        <div class="outline_text blog d-none d-lg-block ">
-            Blog
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-9 col-md-6">
-                    <div class="blog_title">
-                        <h3>Our Creative Articles</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="more_blog">
-                        <a href="#" class="boxed-btn3">More Blogs</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="creative_blog_active owl-carousel">
-                        <div class="single_blog">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="/images/blog/1.png" alt="">
-                                </a>
-                            </div>
-                            <div class="blog_content">
-                                <a href="#">
-                                    <span class="date">October 19, 2019</span>
-                                </a>
-                                <a href="#">
-                                    <h3>Industry as their over draft</h3>
-                                </a>
-                                <div class="owner_info">
-                                    <div class="author_thumb">
-                                        <img src="/images/blog/author2.png" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>Mesica Chouhan</h4>
-                                        </a>
-                                        <p>Business Owner</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="/images/blog/2.png" alt="">
-                                </a>
-                            </div>
-                            <div class="blog_content">
-                                <a href="#">
-                                    <span class="date">October 19, 2019</span>
-                                </a>
-                                <a href="#">
-                                    <h3>Construction their over draft</h3>
-                                </a>
-                                <div class="owner_info">
-                                    <div class="author_thumb">
-                                        <img src="/images/blog/author3.png" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>Mesica Chouhan</h4>
-                                        </a>
-                                        <p>Business Owner</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="/images/blog/3.png" alt="">
-                                </a>
-                            </div>
-                            <div class="blog_content">
-                                <a href="#">
-                                    <span class="date">October 19, 2019</span>
-                                </a>
-                                <a href="#">
-                                    <h3>Industry as their over draft</h3>
-                                </a>
-                                <div class="owner_info">
-                                    <div class="author_thumb">
-                                        <img src="/images/blog/author.png" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>Mesica Chouhan</h4>
-                                        </a>
-                                        <p>Business Owner</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_blog">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img src="/images/blog/4.png" alt="">
-                                </a>
-                            </div>
-                            <div class="blog_content">
-                                <a href="#">
-                                    <span class="date">October 19, 2019</span>
-                                </a>
-                                <a href="#">
-                                    <h3>Industry as their over draft</h3>
-                                </a>
-                                <div class="owner_info">
-                                    <div class="author_thumb">
-                                        <img src="/images/blog/author.png" alt="">
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>Mesica Chouhan</h4>
-                                        </a>
-                                        <p>Business Owner</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div> -->
 
-    </div>
 
-    <!-- testimonial_area  -->
-    <div class="testimonial_area ">
-        <div class="outline_text white testmonial d-none d-lg-block">
-            Testimonial
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="testmonial_active owl-carousel">
-                        <div class="single_carousel">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6">
-                                    <div class="single_testmonial text-center">
-                                        <div class="thumb">
-                                            <img src="/images/testimonial/thumb.png" alt="">
-                                        </div>
-                                        <p>Innovative brewing methods and our coffee is sourced from various parts of
-                                            the globe and are roasted to perfection. </p>
-                                        <div class="testmonial_author">
-                                            <h3>Mesica Chouhan</h3>
-                                            <span>Mesica Chouhan</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6">
-                                    <div class="single_testmonial text-center">
-                                        <div class="thumb">
-                                            <img src="/images/testimonial/thumb.png" alt="">
-                                        </div>
-                                        <p>Innovative brewing methods and our coffee is sourced from various parts of
-                                            the globe and are roasted to perfection. </p>
-                                        <div class="testmonial_author">
-                                            <h3>Mesica Chouhan</h3>
-                                            <span>Mesica Chouhan</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single_carousel">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-6">
-                                    <div class="single_testmonial text-center">
-                                        <div class="thumb">
-                                            <img src="/images/testimonial/thumb.png" alt="">
-                                        </div>
-                                        <p>Innovative brewing methods and our coffee is sourced from various parts of
-                                            the globe and are roasted to perfection. </p>
-                                        <div class="testmonial_author">
-                                            <h3>Mesica Chouhan</h3>
-                                            <span>Mesica Chouhan</span>
-                                        </div>
-                                    </div>
+                <!-- discuss_projects_start  -->
+                <div class="discuss_projects">
+                    <div class="outline_text white project d-none d-lg-block">
+                        Let’s talk
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-12">
+                                <div class="project_text text-center">
+                                    <h3>¡Trabajemos Juntos!</h3>
+                                    <a class="boxed-btn3" href="#">Empezar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <!-- /testimonial_area  -->
+                <!-- discuss_projects_end  -->
 
-    <!-- discuss_projects_start  -->
-    <div class="discuss_projects">
-        <div class="outline_text white project d-none d-lg-block">
-            Let’s talk
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="project_text text-center">
-                        <h3>Let’s start your project with us</h3>
-                        <a class="boxed-btn3" href="#">Start Talking</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- discuss_projects_end  -->
-
-    <!-- footer start -->
-    <footer class="footer">
-        <div class="footer_top">
+                <!-- footer start -->
+                <footer class="footer">
+                    <!-- <div class="footer_top">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-4 col-md-6 col-lg-4">
@@ -565,66 +348,53 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="copy-right_text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <p class="copy_right text-center">
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                            Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script> All rights reserved | This
-                            template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href=""
-                                target="_blank">Colorlib</a>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+        </div> -->
+                    <div class="copy-right_text">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="copy_right text-center">
+                                        Copyright &copy;
+                                        <script>document.write(new Date().getFullYear());</script> All rights reserved |
+                                        Site is indev, hope you <i class="fa fa-heart-o" aria-hidden="true"></i>.
+                                        <strong>zZPhoenixZz</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--/ footer end  -->
+                </footer>
+                <!--/ footer end  -->
 
-    <!-- JS here -->
-    <script src="/js/update/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="/js/update/vendor/jquery-1.12.4.min.js"></script>
+                <!-- JS here -->
+                <script src="/js/update/vendor/modernizr-3.5.0.min.js"></script>
+                <script src="/js/update/vendor/jquery-1.12.4.min.js"></script>
 
-    <script src="/js/update/popper.min.js"></script>
-    <script src="/js/update/bootstrap.min.js"></script>
-    <script src="/js/update/owl.carousel.min.js"></script>
-    <script src="/js/update/isotope.pkgd.min.js"></script>
-    <script src="/js/update/ajax-form.js"></script>
-    <script src="/js/update/waypoints.min.js"></script>
-    <script src="/js/update/jquery.counterup.min.js"></script>
-    <script src="/js/update/imagesloaded.pkgd.min.js"></script>
-    <script src="/js/update/scrollIt.js"></script>
-    <script src="/js/update/jquery.scrollUp.min.js"></script>
-    <script src="/js/update/wow.min.js"></script>
-    <script src="/js/update/nice-select.min.js"></script>
-    <script src="/js/update/jquery.slicknav.min.js"></script>
-    <script src="/js/update/jquery.magnific-popup.min.js"></script>
-    <script src="/js/update/plugins.js"></script>
-    <script src="/js/update/gijgo.min.js"></script>
+                <script src="/js/update/popper.min.js"></script>
+                <script src="/js/update/bootstrap.min.js"></script>
+                <script src="/js/update/owl.carousel.min.js"></script>
+                <script src="/js/update/isotope.pkgd.min.js"></script>
+                <script src="/js/update/ajax-form.js"></script>
+                <script src="/js/update/waypoints.min.js"></script>
+                <script src="/js/update/jquery.counterup.min.js"></script>
+                <script src="/js/update/imagesloaded.pkgd.min.js"></script>
+                <script src="/js/update/scrollIt.js"></script>
+                <script src="/js/update/jquery.scrollUp.min.js"></script>
+                <script src="/js/update/wow.min.js"></script>
+                <script src="/js/update/nice-select.min.js"></script>
+                <script src="/js/update/jquery.slicknav.min.js"></script>
+                <script src="/js/update/jquery.magnific-popup.min.js"></script>
+                <script src="/js/update/plugins.js"></script>
+                <script src="/js/update/gijgo.min.js"></script>
 
 
-    <!--contact js-->
-    <!-- <script src="js/contact.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.form.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/mail-script.js"></script> -->
+                <script src="/js/main.js"></script>
 
-    <script src="/js/main.js"></script>
-    <!-- New section -->
-
-
-
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-    <script type="text/javascript" src="/js/libs/jquery.js"></script>
-    <script type="text/javascript" src="/js/libs/jquery.keyframes.js"></script>
-    <script src="/js/nav_animations.js"></script>
-    <script src="/js/functions.js"></script>
+                <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
+                <script type="text/javascript" src="/js/libs/jquery.js"></script>
+                <script type="text/javascript" src="/js/libs/jquery.keyframes.js"></script>
+                <script src="/js/nav_animations.js"></script>
+                <script src="/js/functions.js"></script>
 </body>
 
 </html>
