@@ -2222,7 +2222,7 @@ h3 {
 @media (max-width: 767px) {
   /* line 79, ../../Arafath/CL/December/230. Portfolio/HTML/scss/_gallery.scss */
   .portfolio_area .single_gallery .thumb {
-    height: auto;
+    height: 15rem;
   }
 }
 
