@@ -32,12 +32,6 @@
 
 <body onload="analytics()">
     <% if(locals.posts){  %>
-    <script>
-        $('#lhcZ2dbk2veHhcGjNV0Z').on('hide.bs.modal', () => {
-            console.log("cerrad");
-            $('#ytplayer_lhcZ2dbk2veHhcGjNV0Z').attr('src', '');
-        });
-    </script>
     <% posts.forEach(function(post, i) { %>
     <div class="modal fade bd-example-modal-lg" id="<%= post.id %>" tabindex="-1" role="dialog"
         aria-labelledby="myLargeModalLabel" aria-hidden="true">

@@ -7,6 +7,7 @@ const rootController = require('../controllers/root');
 const router = express.Router();
 
 router.get('/', rootController.getHome);
+router.get('/cv', rootController.getCv);
 
 
 // router.get('/products', shopController.getProducts);

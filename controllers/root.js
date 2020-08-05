@@ -11,9 +11,14 @@ exports.getHome = async (req, res, next) => {
     } catch (error) {
         console.log(error);
     }
+};
 
-
-
-
-
+exports.getCv= async (req, res, next) => {
+    try {
+        res.render('cv', {
+            path: '/cv'
+        });
+    } catch (error) {
+        console.log(error);
+    }
 };
