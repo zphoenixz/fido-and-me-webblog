@@ -24,7 +24,7 @@ exports.postSession = async (req, res, next) => {
                         timeZone: data.time_zone.name,
                     };
                     console.log(analyticsData);
-                    // databaseService.postAnalytic(analyticsData);
+                    databaseService.postAnalytic(analyticsData);
                 });
             })
             .then(json => console.log(json));
