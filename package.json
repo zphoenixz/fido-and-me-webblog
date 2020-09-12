@@ -32,7 +32,7 @@
     "http": "0.0.1-security",
     "jquery": "^3.5.1",
     "jquerykeyframes": "^1.0.8",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
