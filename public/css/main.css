@@ -140,13 +140,13 @@ section h1 {
 /* Section Images */
 
 .slider_area#home_f {
-    background: url('/images/illimani.jpg') no-repeat center center/cover;
+    background: url('../images/illimani.jpg') no-repeat center center/cover;
     box-shadow: inset 0 0 0 1000px rgba(59, 76, 102, 0.6);
 }
 
 
 .slider_area#home_m {
-    background: url('/images/illimani.jpg') no-repeat center center/cover;
+    background: url('../images/illimani.jpg') no-repeat center center/cover;
     box-shadow: inset 0 0 0 100vmax rgba(88, 117, 119, 0.6);
 }
 

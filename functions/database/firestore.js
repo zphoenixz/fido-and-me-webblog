@@ -1,14 +1,10 @@
-var admin = require("firebase-admin");
+const admin = require("firebase-admin");
 
 const postModel = require("../models/post");
 
-admin.initializeApp({
-    credential: admin.credential.cert(JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS)),
-    databaseURL: process.env.DATABASE_URL
-});
-
-
+admin.initializeApp();
 const database = admin.firestore();
+
 
 const analyticsCollection = database.collection('analytics');
 const postsCollection = database.collection('blogposts');

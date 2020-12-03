@@ -1,16 +1,12 @@
 const fetch = require('node-fetch');
 
 const databaseService = require('../database/firestore');
-
+const functions = require('firebase-functions');
 
 exports.postSession = async (req, res, next) => {
 
     let client_ip = req.body.ip;
-    // const analytic = analyticsCollection.doc();
-
-    // console.log(client_ip);
-    const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${process.env.IP_API_KEY}&ip=${client_ip}`;
-    console.log(url);
+    const url = `https://api.ipgeolocation.io/ipgeo?apiKey=${functions.config().someservice.key}&ip=${client_ip}`;
     try {
         await fetch(url)
             .then((response) => {
@@ -29,6 +25,7 @@ exports.postSession = async (req, res, next) => {
             })
             .then(json => console.log(json));
     } catch (error) {
+        console.error("Error when saving analytic")
         console.error(error)
     }
 
@@ -39,3 +36,4 @@ exports.postSession = async (req, res, next) => {
     });
 
 };
+
