@@ -58,13 +58,16 @@
 
                             <% if(i == 1){  %>
                             <div class="carousel-item active">
-                                <img class="d-block w-100 card-img-top" src="<%= post.media_url[i] %>" alt="First slide">
+                                <img class="d-block w-100 card-img-top" src="<%= post.media_url[i] %>"
+                                    alt="First slide">
                                 <% } else if(i == 2){  %>
                                 <div class="carousel-item">
-                                    <img class="d-block w-100 card-img-top" src="<%= post.media_url[i] %>" alt="Second slide">
+                                    <img class="d-block w-100 card-img-top" src="<%= post.media_url[i] %>"
+                                        alt="Second slide">
                                     <% } else if(i == 3){  %>
                                     <div class="carousel-item">
-                                        <img class="d-block w-100 card-img-top" src="<%= post.media_url[i] %>" alt="Third slide">
+                                        <img class="d-block w-100 card-img-top" src="<%= post.media_url[i] %>"
+                                            alt="Third slide">
                                         <% } else if(i == 4){  %>
                                         <div class="carousel-item">
                                             <img class="d-block w-100 card-img-top" src="<%= post.media_url[i] %>"
@@ -85,6 +88,11 @@
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
+                                </div>
+                                <%} else if(post.media == "slide"){  %>
+                                <div class="embed-responsive embed-responsive-16by9">
+                                    <iframe width="1280" height="720" src="<%= post.media_url[1] %>" frameborder="0"
+                                        allow="accelerometer; autoplay; encrypted-media; gyroscope;"></iframe>
                                 </div>
                                 <% } else{ %>
                                 <div class="embed-responsive embed-responsive-16by9">
@@ -347,7 +355,9 @@
                                 <div class="col-xl-12">
                                     <p class="copy_right text-center">
                                         Copyright &copy;
-                                        <script>document.write(new Date().getFullYear());</script> All rights reserved |
+                                        <script>
+                                            document.write(new Date().getFullYear());
+                                        </script> All rights reserved |
                                         Site is indev, hope you <i class="fa fa-heart-o" aria-hidden="true"></i>.
                                         <strong>zZPhoenixZz</strong>
                                     </p>
