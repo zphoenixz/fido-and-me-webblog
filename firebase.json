@@ -1,7 +1,7 @@
 {
   "hosting": {
     "public": "public",
-    "rewrites":[{
+    "rewrites": [{
       "source": "**",
       "function": "app"
     }],
@@ -10,5 +10,11 @@
       "**/.*",
       "**/node_modules/**"
     ]
+  },
+  "emulators": {
+    "hosting": {
+      "host": "localhost",
+      "port": "5100"
+    }
   }
 }
